@@ -17,7 +17,7 @@ MonoBehaviour:
   gemActiveMaterial: {fileID: 2100000, guid: 6bc9243238fd4cf46bbf17b460b0d60d, type: 2}
   gemInactiveMaterial: {fileID: 2100000, guid: 09b8590c8ecee5e4fb5d926be926e162, type: 2}
   gemMotionName: explosion
-  gemMotionGo: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
+  gemMotionGo: {fileID: 3452401506603896833, guid: 38710ba9f9a757c4e8a47b43c4f6da2a, type: 3}
   smoothTimeFactor: 20
   smoothDragGravity: 20
   _minScale: 0.4

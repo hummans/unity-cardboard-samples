@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace ViewModel
@@ -19,7 +20,10 @@ namespace ViewModel
         [Range(0,100)] public float smoothTimeFactor;
         [Range(0,45)] public float smoothDragGravity;
 
+        [Header("Gem Scale")]
         public float _minScale;
         public float _maxScale = 1.5f;
+
+        public ISubject<Gem> OnDestroy = new Subject<Gem>();
     }
 }

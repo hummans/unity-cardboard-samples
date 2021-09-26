@@ -22,12 +22,14 @@ namespace Commands
             {
                 Debug.Log($"[TurnGemDestroy] Gem {gem.gemData.gemName} has been destroyed by the user.");
                 gameData.OnDestroy.OnNext(gem);
+                gem.gemData.OnDestroy.OnNext(gem);
                 gameData.currentGemInScreen.Value--;
             } 
             else 
             {
                 Debug.Log($"[TurnGemDestroy] Gem {gem.gemData.gemName} has been destroyed by the ground.");
                 gameData.OnDestroy.OnNext(gem);
+                gem.gemData.OnDestroy.OnNext(gem);
                 gameData.currentGemInScreen.Value--;
             }
         }

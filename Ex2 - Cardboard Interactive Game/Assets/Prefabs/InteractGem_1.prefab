@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6057228435645803979}
   - component: {fileID: 8951578951037526482}
   - component: {fileID: 6057228435645803978}
+  - component: {fileID: 8199401289369833677}
   m_Layer: 0
   m_Name: Icosahedron_GEO
   m_TagString: Untagged
@@ -127,6 +128,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameFactoryCmd: {fileID: 11400000, guid: 577aba3129f93f347a496e26d6ef4d86, type: 2}
   gameData: {fileID: 11400000, guid: c84c2208ed0614440bf9e2968b743693, type: 2}
+  gemAnimationDisplay: {fileID: 8199401289369833677}
+--- !u!114 &8199401289369833677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425711146576088876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47eb58dea6c7da41b73aea8c15d48b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemTransform: {fileID: 6240786108794037047}
 --- !u!1 &2823321821751768256
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +165,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2823321821751768256}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

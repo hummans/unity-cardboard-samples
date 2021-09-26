@@ -10,6 +10,7 @@ namespace Components
     {
         public GameFactoryCmd gameFactoryCmd;
         public GameData gameData;
+        public GemAnimationDisplay gemAnimationDisplay;
         private GemData gemData;
 
         private Renderer _myRenderer;
@@ -23,7 +24,8 @@ namespace Components
 
         public void StartGem(GemData gemData)
         {
-            SetGemData(gemData);
+            this.gemData = gemData;
+            gemAnimationDisplay.StartGemAnimation(gemData);
 
             _myRigidbody = GetComponent<Rigidbody>();
             _myRenderer = GetComponent<Renderer>();
@@ -39,11 +41,6 @@ namespace Components
             _myRigidbody.drag = gemData.smoothDragGravity;
             transform.localScale = new Vector3(gemData._minScale, gemData._minScale, gemData._minScale);
             gameData.currentGemInScreen.Value++;
-        }
-
-        public void SetGemData(GemData gemData)
-        {   
-            this.gemData = gemData;
         }
 
         private void IntervalScale(long interval)
@@ -120,6 +117,6 @@ namespace Components
             
             // Destroy instance
             _observable.Dispose();
-        } 
+        }
     }    
 }

@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656081431115635423}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4002214546779602895}
   - component: {fileID: 4002214546779602893}
   - component: {fileID: 4002214546779602894}
+  - component: {fileID: 2065527976499553910}
   m_Layer: 0
   m_Name: QuadSphere_GEO
   m_TagString: Untagged
@@ -158,3 +159,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameFactoryCmd: {fileID: 11400000, guid: 577aba3129f93f347a496e26d6ef4d86, type: 2}
   gameData: {fileID: 11400000, guid: c84c2208ed0614440bf9e2968b743693, type: 2}
+  gemAnimationDisplay: {fileID: 2065527976499553910}
+--- !u!114 &2065527976499553910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4002214546779602888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47eb58dea6c7da41b73aea8c15d48b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemTransform: {fileID: 5415168960409977754}
