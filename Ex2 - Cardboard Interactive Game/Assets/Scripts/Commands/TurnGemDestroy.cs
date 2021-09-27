@@ -18,19 +18,33 @@ namespace Commands
 
         public void Execute()
         {
+            CounterUpdate(gem);
+            gameData.OnDestroy.OnNext(gem);
+            gem.gemData.OnDestroy.OnNext(gem);
+            gameData.currentGemInScreen.Value--;
+        }
+        
+        private void CounterUpdate(Gem gem)
+        {
             if(gem.destroyByUser)
             {
                 Debug.Log($"[TurnGemDestroy] Gem {gem.gemData.gemName} has been destroyed by the user.");
-                gameData.OnDestroy.OnNext(gem);
-                gem.gemData.OnDestroy.OnNext(gem);
-                gameData.currentGemInScreen.Value--;
-            } 
-            else 
+                if(gem.gemData.gemType == TypeGem.GOOD)
+                {
+                    gameData.currentPoints.Value += gem.gemData.gemPoint;
+                } 
+                else 
+                {
+                    gameData.currentPoints.Value -= gem.gemData.gemPoint;       
+                }
+            }
+            else
             {
                 Debug.Log($"[TurnGemDestroy] Gem {gem.gemData.gemName} has been destroyed by the ground.");
-                gameData.OnDestroy.OnNext(gem);
-                gem.gemData.OnDestroy.OnNext(gem);
-                gameData.currentGemInScreen.Value--;
+                if(gem.gemData.gemType == TypeGem.GOOD)
+                {
+                    gameData.currentPoints.Value -= gem.gemData.gemPoint;
+                }
             }
         }
     }

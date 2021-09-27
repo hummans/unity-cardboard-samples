@@ -17,24 +17,33 @@ namespace Components
         void Start()
         {
             gameData.OnDestroy
-                .Subscribe(DisplayAnimation)
+                .Subscribe(DisplayAnimationNewPoint)
                 .AddTo(this);
         }
-        
-        private void DisplayAnimation(Gem gem)
+
+        private void DisplayAnimationNewPoint(Gem gem)
         {
-            if(gem.destroyByUser && gem.gemData.gemPoint > 0)
+            if(gem.destroyByUser)
             {
-                pointerLabel.text = $"+{Mathf.Abs(gem.gemData.gemPoint)}";
-            }
-            else
-            {
-                if(gem.gemData.gemPoint > 0)
+                if(gem.gemData.gemType == TypeGem.GOOD)
+                {
+                    pointerLabel.text = $"+{Mathf.Abs(gem.gemData.gemPoint)}";
+                } 
+                else 
                 {
                     pointerLabel.text = $"-{Mathf.Abs(gem.gemData.gemPoint)}";
                 }
+                
+                animator.SetTrigger("Pointer");
             }
-            animator.SetTrigger("Pointer");
+            else
+            {
+                if(gem.gemData.gemType == TypeGem.GOOD)
+                {
+                    pointerLabel.text = $"-{Mathf.Abs(gem.gemData.gemPoint)}";
+                    animator.SetTrigger("Pointer");
+                }
+            }
         }
     }
 }

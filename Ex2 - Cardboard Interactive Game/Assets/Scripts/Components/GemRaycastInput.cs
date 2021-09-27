@@ -6,7 +6,7 @@ using Commands;
 
 namespace Components
 {
-    public class GemInput : MonoBehaviour
+    public class GemRaycastInput : MonoBehaviour
     {
         public GameFactoryCmd gameFactoryCmd;
         public GameData gameData;

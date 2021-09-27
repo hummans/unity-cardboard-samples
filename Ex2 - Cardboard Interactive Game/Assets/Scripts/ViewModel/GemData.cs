@@ -10,6 +10,7 @@ namespace ViewModel
     {
         [Header("Gem Data")]
         public string gemName;
+        public TypeGem gemType;
         public int gemPoint;
         public Material gemActiveMaterial;
         public Material gemInactiveMaterial;
@@ -25,5 +26,11 @@ namespace ViewModel
         public float _maxScale = 1.5f;
 
         public ISubject<Gem> OnDestroy = new Subject<Gem>();
+    }
+
+    public enum TypeGem
+    {
+        GOOD,
+        BAD
     }
 }

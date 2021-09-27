@@ -12,14 +12,22 @@ namespace Components
     {
         public GameData gameData;
         public GameObject gemContainer;
+        public IDisposable delayObservable;
 
         void Start()
         {
-            gameData.currentGemInScreen.Value = 0;
+            delayObservable = Observable.Interval(TimeSpan.FromSeconds(gameData.gameDelayInitialization))
+                .Subscribe(StartDelay)
+                .AddTo(this);
+        }
 
+        private void StartDelay(long obj)
+        {
             Observable.Interval(TimeSpan.FromSeconds(gameData.gameSpawnRate))
                 .Subscribe(IntervalController)
                 .AddTo(this);
+            
+            delayObservable.Dispose();
         }
 
         private void IntervalController(long timer)
@@ -38,7 +46,7 @@ namespace Components
             gem.SetActive(false);
             
             int j = Random.Range(0, gameData.gameGemType.Length);
-            gem.GetComponentInChildren<GemInput>().StartGem(gameData.gameGemType[j]);
+            gem.GetComponentInChildren<GemRaycastInput>().StartGem(gameData.gameGemType[j]);
 
             gem.transform.SetParent(gemContainer.transform);
             TeleportRandomly(gem);

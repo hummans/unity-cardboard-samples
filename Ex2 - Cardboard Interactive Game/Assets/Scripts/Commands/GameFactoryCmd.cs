@@ -12,5 +12,10 @@ namespace Commands
         {
             return new TurnGemDestroy(gem, gameData);
         }
+
+        public TurnPlayCmd PlayTurn(GameData gameData)
+        {
+            return new TurnPlayCmd(gameData);
+        }
     }
 }
